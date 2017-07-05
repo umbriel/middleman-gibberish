@@ -150,7 +150,7 @@ module ::Middleman
               <style>
                 .gibberish {
                   margin: auto;
-                  color: #999;
+                  color: red;
                   text-align: center;
                 }
 

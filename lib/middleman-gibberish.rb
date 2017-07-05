@@ -148,10 +148,17 @@ module ::Middleman
           <html>
             <head>
               <style>
+                * {
+                  box-sizing: border-box;
+                  margin: 0;
+                }
                 .gibberish {
-                  margin: auto;
-                  color: red;
-                  text-align: center;
+                  text-align: center;font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                  top: 50%;
+                  position: relative;
+                  transform: translateY(-50%);
+                  max-width:480px;
+                  margin: 0 auto;
                 }
 
                 .gibberish-instructions,
@@ -172,14 +179,12 @@ module ::Middleman
               </style>
             </head>
 
-            <body style='width:100%;'>
-              <br>
-              <br>
-              <br>
+            <body>
+
               <div class='gibberish'>
 
                 <div class='gibberish-instructions'>
-                  enter password and press &lt;enter&gt;
+                  Restricted content — Please use the provided password.
                 </div>
 
                 <input id='gibberish-password' name='gibberish-password' type='password' class='gibberish-password'/>
@@ -238,7 +243,7 @@ module ::Middleman
                 if(code==13){
                   var _password = password.val();
                   if(!decrypt(_password)){
-                    message.html("sorry, wrong password - try again.");
+                    message.html("Sorry, wrong password — try again.");
                   }
                 } else {
                   message.html("");
